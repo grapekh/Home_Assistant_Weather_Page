@@ -1,0 +1,715 @@
+# Weather Card for Lovelace
+# File Name: dwains-dashboard/configs/more_pages/weather/page.yaml
+#
+# Note, the config.yaml code in same directory is this: 
+#
+# name: Weather
+# icon: mdi:windsock
+# show_in_navbar: false
+#
+# This Yaml code can be added to dwains Dashboard or just a page in Home Assistant / lovelace. \
+# There are a few custom card requirements (like compass) and I utilize custom styles. 
+# 
+# Grapekh - 2023-07-04 - Copied idea from Chris 
+# Grapekh - 2023-07-05 - Updated to include my Ambient Weather sensors and custom configuration
+#
+
+cards:
+  - cards:
+      # First Row: 
+      # Thermostat Row - Block of temperatures. 
+      # Different color changes depending on which location. 
+
+      - cards:
+
+          - entity: sensor.ecobee3_thermostat_temperature
+            icon: mdi:blank
+            name: Man Cave
+            show_state: true
+            show_units: true
+            state:
+              - operator: ">="
+                styles:
+                  card:
+                    - background-color: red
+                    - filter: opacity(100%)
+                    - animation: blink 4s ease infinite
+                  icon:
+                    - color: white
+                  name:
+                    - color: white
+                  state:
+                    - color: white
+                value: 95
+              - operator: ">="
+                styles:
+                  card:
+                    - filter: opacity(90%)
+                  icon:
+                    - color: white
+                  name:
+                    - color: white
+                  state:
+                    - color: pink
+                value: 80
+
+            styles:
+              card:
+                - height: 55px
+                - background-color: black
+                - border: 1px solid rgb(80,80,80)
+                - border-radius: 10%
+                - font-family: sans-serif
+                - padding: 5%
+                - filter: opacity(90%)
+              icon:
+                - color: rgb(243,156,15)
+                - width: 50px
+                - height: 55px
+                - padding: 0px 55px 5px 0px
+              label:
+                - color: green
+                - font-size: 9px
+                - justify-self: start
+                - padding: 0px 5px
+              name:
+                - font-size: 12px
+                - color: white
+              state:
+                - justify-self: center
+                - font-size: 12px
+                - padding: 0px 5px
+                - color: lightblue
+            type: custom:button-card
+
+          - entity: sensor.workshop_door_temperature_measurement
+            icon: mdi:blank
+            name: Garage
+            show_state: true
+            show_units: true
+            state:
+              - operator: ">="
+                styles:
+                  card:
+                    - background-color: red
+                    - filter: opacity(100%)
+                    - animation: blink 4s ease infinite
+                  icon:
+                    - color: white
+                  name:
+                    - color: white
+                  state:
+                    - color: white
+                value: 95
+              - operator: ">="
+                styles:
+                  card:
+                    - filter: opacity(90%)
+                  icon:
+                    - color: white
+                  name:
+                    - color: white
+                  state:
+                    - color: pink
+                value: 85
+
+            styles:
+              card:
+                - height: 55px
+                - background-color: black
+                - border: 1px solid rgb(80,80,80)
+                - border-radius: 10%
+                - font-family: sans-serif
+                - padding: 5%
+                - filter: opacity(90%)
+              icon:
+                - color: rgb(243,156,15)
+                - width: 50px
+                - height: 55px
+                - padding: 0px 55px 5px 0px
+              label:
+                - color: green
+                - font-size: 9px
+                - justify-self: start
+                - padding: 0px 5px
+              name:
+                - font-size: 12px
+                - color: white
+              state:
+                - justify-self: center
+                - font-size: 12px
+                - padding: 0px 5px
+                - color: lightblue
+            type: custom:button-card
+
+          - entity: sensor.howies_homestead_inside_temp
+            icon: mdi:blank
+            name: Office
+            show_state: true
+            show_units: true
+            state:
+              - operator: ">="
+                styles:
+                  card:
+                    - background-color: red
+                    - filter: opacity(100%)
+                    - animation: blink 4s ease infinite
+                  icon:
+                    - color: white
+                  name:
+                    - color: white
+                  state:
+                    - color: white
+                value: 95
+              - operator: ">="
+                styles:
+                  card:
+                    - filter: opacity(90%)
+                  icon:
+                    - color: white
+                  name:
+                    - color: white
+                  state:
+                    - color: pink
+                value: 88
+
+            styles:
+              card:
+                - height: 55px
+                - background-color: black
+                - border: 1px solid rgb(80,80,80)
+                - border-radius: 10%
+                - font-family: sans-serif
+                - padding: 5%
+                - filter: opacity(90%)
+              icon:
+                - color: rgb(243,156,15)
+                - width: 50px
+                - height: 55px
+                - padding: 0px 55px 5px 0px
+              label:
+                - color: green
+                - font-size: 9px
+                - justify-self: start
+                - padding: 0px 5px
+              name:
+                - font-size: 12px
+                - color: white
+              state:
+                - justify-self: center
+                - font-size: 12px
+                - padding: 0px 5px
+                - color: lightblue
+            title: Office
+            type: custom:button-card
+
+          - entity: sensor.coop_door_temperature_measurement
+            icon: mdi:blank
+            name: Coop
+            show_state: true
+            show_units: true
+            state:
+              - operator: ">="
+                styles:
+                  card:
+                    - background-color: red
+                    - filter: opacity(100%)
+                    - animation: blink 4s ease infinite
+                  icon:
+                    - color: white
+                  name:
+                    - color: white
+                value: 95
+              - operator: ">="
+                styles:
+                  card:
+                    - filter: opacity(90%)
+                  icon:
+                    - color: white
+                  name:
+                    - color: white
+                  state:
+                    - color: pink
+                value: 85
+
+            styles:
+              card:
+                - height: 55px
+                - background-color: black
+                - border: 1px solid rgb(80,80,80)
+                - border-radius: 10%
+                - font-family: sans-serif
+                - padding: 5%
+                - filter: opacity(90%)
+              icon:
+                - color: rgb(243,156,15)
+                - width: 50px
+                - height: 55px
+                - padding: 0px 55px 5px 0px
+              label:
+                - color: green
+                - font-size: 9px
+                - justify-self: start
+                - padding: 0px 5px
+              name:
+                - font-size: 12px
+                - color: white
+              state:
+                - justify-self: center
+                - font-size: 12px
+                - padding: 0px 5px
+            title: Coop
+            type: custom:button-card
+
+          - entity: sensor.wh32b_temp_f
+            icon: mdi:blank
+            name: Solar Shed
+            show_state: true
+            show_units: true
+            size: 10%
+            state:
+              - operator: ">="
+                styles:
+                  card:
+                    - background-color: red
+                    - filter: opacity(100%)
+                    - animation: blink 4s ease infinite
+                  icon:
+                    - color: white
+                  name:
+                    - color: white
+                  state:
+                    - color: black
+                value: 100
+              - operator: ">="
+                styles:
+                  card:
+                    - filter: opacity(90%)
+                  icon:
+                    - color: white
+                  name:
+                    - color: white
+                  state:
+                    - color: pink
+                value: 95
+
+            styles:
+              card:
+                - height: 55px
+                - background-color: black
+                - border: 1px solid rgb(80,80,80)
+                - border-radius: 10%
+                - font-family: sans-serif
+                - padding: 5%
+                - filter: opacity(90%)
+              icon:
+                - color: rgb(243,156,15)
+                - width: 50px
+                - height: 55px
+                - padding: 0px 55px 5px 0px
+              label:
+                - color: green
+                - font-size: 9px
+                - justify-self: start
+                - padding: 0px 5px
+              name:
+                - font-size: 12px
+                - color: white
+              state:
+                - justify-self: center
+                - font-size: 12px
+                - padding: 0px 5px
+            title: Solar Shed
+            type: custom:button-card
+        columns: 5
+        square: false
+        type: grid
+
+      # Second row, 4 icons with the coloful outside temp from weather station.
+      # Note, I calculate the feels like from my own mqtt calculations, but 
+      # this can all be gotten from the cloud / ambient weather data. 
+      # Thanks chris for explaining how the operator/styles work. 
+      # Different values will show different colors (ie: if humidity is greater
+      # then 90% display it in red)
+
+      - cards:
+          - entity: sensor.wh65b_temp_f
+            name: Outside
+            show_state: true
+            show_units: true
+            state:
+              - operator: ">="
+                styles:
+                  card:
+                    - background-color: red
+                    - filter: opacity(100%)
+                    - height: 100px
+                    - animation: blink 4s ease infinite
+                  icon:
+                    - color: white
+                  name:
+                    - color: white
+                  state:
+                    - color: white
+                value: 95
+              - operator: ">="
+                styles:
+                  card:
+                    - filter: opacity(100%)
+                    - height: 100px
+                  icon:
+                    - color: green
+                  name:
+                    - color: white
+                  state:
+                    - color: white
+                value: 85
+              - operator: ">="
+                styles:
+                  card:
+                    - filter: opacity(100%)
+                    - height: 100px
+                  icon:
+                    - color: lightblue
+                  name:
+                    - color: white
+                  state:
+                    - color: lightblue
+                value: 70
+              - operator: ">="
+                styles:
+                  card:
+                    - filter: opacity(100%)
+                    - height: 100px
+                  icon:
+                    - color: yellow
+                  name:
+                    - color: white
+                  state:
+                    - color: yellow
+                value: 50
+            styles:
+              card:
+                - filter: opacity(30%)
+              name:
+                - font-size: 12px
+                - color: white
+            title: Outside
+            type: custom:button-card
+
+          - entity: sensor.wh65b_feels_like
+            name: Feels Like
+            show_state: true
+            show_units: true
+            state:
+              - operator: ">="
+                styles:
+                  card:
+                    - background-color: red
+                    - filter: opacity(100%)
+                    - height: 100px
+                    - animation: blink 4s ease infinite
+                  icon:
+                    - color: white
+                  name:
+                    - color: white
+                  state:
+                    - color: white
+                value: 100
+              - operator: ">="
+                styles:
+                  card:
+                    - filter: opacity(100%)
+                    - height: 100px
+                  icon:
+                    - color: crimson
+                  name:
+                    - color: white
+                  state:
+                    - color: crimson
+                value: 92
+              - operator: ">="
+                styles:
+                  card:
+                    - filter: opacity(100%)
+                    - height: 100px
+                    - null
+                  icon:
+                    - color: lightblue
+                  name:
+                    - color: white
+                  state:
+                    - color: lightblue
+                value: 70
+              - operator: ">="
+                styles:
+                  card:
+                    - filter: opacity(100%)
+                    - height: 100px
+                  icon:
+                    - color: yellow
+                  name:
+                    - color: white
+                  state:
+                    - color: yellow
+                value: 50
+            styles:
+              card:
+                - height: 100px
+                - filter: opacity(30%)
+              name:
+                - font-size: 12px
+                - color: white
+            title: Outside
+            type: custom:button-card
+
+          - entity: sensor.wh65b_humidity
+            name: Humidity
+            show_state: true
+            show_units: true
+            state:
+              - operator: ">="
+                styles:
+                  card:
+                    - background-color: red
+                    - filter: opacity(100%)
+                    - height: 100px
+                  icon:
+                    - color: white
+                  name:
+                    - color: white
+                  state:
+                    - color: white
+                value: 90
+              - operator: ">="
+                styles:
+                  card:
+                    - filter: opacity(100%)
+                    - height: 100px
+                  icon:
+                    - color: pink
+                  name:
+                    - color: white
+                  state:
+                    - color: pink
+                value: 75
+              - operator: ">="
+                styles:
+                  card:
+                    - filter: opacity(100%)
+                    - height: 100px
+                  icon:
+                    - color: lightblue
+                  name:
+                    - color: white
+                  state:
+                    - color: lightblue
+                value: 0
+            styles:
+              card:
+                - height: 100px
+                - filter: opacity(30%)
+              name:
+                - font-size: 12px
+                - color: white
+            title: Humidity
+            type: custom:button-card
+
+          - entity: sensor.howies_homestead_abs_pressure
+            name: Barometric Pressure
+            show_state: true
+            show_units: true
+            state:
+              - operator: ">="
+                styles:
+                  card:
+                    - background-color: red
+                    - filter: opacity(100%)
+                    - height: 100px
+                  icon:
+                    - color: white
+                  name:
+                    - color: white
+                  state:
+                    - color: white
+                value: 32.2
+              - operator: ">="
+                styles:
+                  card:
+                    - filter: opacity(100%)
+                    - height: 100px
+                  icon:
+                    - color: lightblue
+                  name:
+                    - color: white
+                  state:
+                    - color: lightblue
+                value: 29.6
+              - operator: ">="
+                styles:
+                  card:
+                    - background-color: yellow
+                    - filter: opacity(70%)
+                    - height: 100px
+                  icon:
+                    - color: black
+                  name:
+                    - color: black
+                  state:
+                    - color: black
+                value: 0
+            styles:
+              card:
+                - height: 100px
+              name:
+                - font-size: 12px
+                - color: white
+            title: Barometric Pressure
+            type: custom:button-card
+        columns: 4
+        square: false
+        type: grid
+
+      # Next Row: Ambient Weather Info - Wind and Rain
+      # If you go to the app, you'll see nice boxes 
+      # I tried to emulate things like rain gauge, wind direction, etc. 
+      # A few custom cards here like the "compass" card, so make sure 
+      # those are installed through HACS. 
+
+      - cards:
+          - compass:
+              direction_offset: 0
+              east:
+                show: true
+              indicator: arrow_inward
+              language: en
+              north:
+                offset: 0
+                show: true
+              south:
+                show: true
+              west:
+                show: true
+            direction: en
+            header:
+              title:
+                value: Wind
+            indicator_sensors:
+              - indicator:
+                  type: arrow_inward
+                sensor: sensor.wh65b_wind_direction
+            name: Bearing
+            opacity: 0
+            style:
+              "ha-card {\n  #background-color: transparent;\n  #background-color: green;\n\
+              \  box-shadow: none;\n  padding: 0px 0px 40px 0px\n\n}\n.card-content {\n\
+              \  border-radius: 10px;\n  padding: 16px;\n  background-color: var(--paper-card-background-color);\n\
+              \  box-shadow: var(--ha-card-box-shadow, 0 2px 2px 0 rgba(0, 0, 0, 0.14),\
+              \ 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2) );\n\
+              }\n"
+            type: custom:compass-card
+            value_sensors:
+              - decimals: 1
+                sensor: sensor.wh65b_avg_wind_speed
+
+          - color_thresholds:
+              - color: "#ffc000"
+                value: 16
+              - color: "#fee231"
+                value: 8
+              - color: "#55b04f"
+                value: 2.5
+              - color: "#189af2"
+                value: 0
+            entities:
+              - card_mod:
+                  style: ":host {\n  color: 00ccff;\n}\n"
+                entity: sensor.wh65b_avg_wind_speed
+                state_adaptive_color: true
+            hour24: true
+            hours_to_show: 12
+            line_width: 1
+            name: " Speed (accu)"
+            points_per_hour: 10
+            show:
+              extrema: true
+            type: custom:mini-graph-card
+
+          - aggregate_func: max
+            color_thresholds:
+              - color: "#ffc000"
+                value: 16
+              - color: "#fee231"
+                value: 8
+              - color: "#55b04f"
+                value: 2.5
+              - color: "#189af2"
+                value: 0
+            entities:
+              - card_mod:
+                  style: ":host {\n  color: green;\n}\n"
+                entity: sensor.howies_homestead_wind_gust
+                state_adaptive_color: true
+            hour24: true
+            hours_to_show: 12
+            line_width: 1
+            name: Gusts (accu)
+            points_per_hour: 10
+            show:
+              extrema: true
+            type: custom:mini-graph-card
+
+
+          # The Rain Guages...
+          # 3 custom bar-cards in one horizontal stack 
+
+          - columns: 3
+            name: precipitation
+            title: precipitation
+            type: custom:bar-card
+            direction: up
+            indicator: "off"
+            height: 125px
+            icon: mdi:weather-pouring
+            max: 10
+            min: -2
+            style: |-
+              bar-card-value {
+              font-size: 13px;
+              font-weight: bold;
+              color: black;
+              #text-shadow: 1px 1px #0000;
+            target: 2
+            width: 85%
+            show_minmax: true
+            entities:
+              - color: Cyan
+                entity: sensor.howies_homestead_hourly_rain_rate
+                name: Rate
+              - color: Cyan
+                entity: sensor.howies_homestead_daily_rain
+                name: Day
+              - color: Yellow
+                entity: sensor.howies_homestead_event_rain
+                name: Event
+
+        type: horizontal-stack
+
+      # Next row, the Weather forcast, etc.
+      - cards:
+          - entity: weather.ecobee3_thermostat
+            name: Howie's Homestead
+            show_current: true
+            show_forecast: true
+            type: weather-forecast
+        columns: 1
+        square: false
+        type: grid
+
+    columns: 1
+    square: false
+    type: grid
+
+columns: 1
+square: false
+type: grid
