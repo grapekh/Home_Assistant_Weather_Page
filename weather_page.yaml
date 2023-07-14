@@ -10,7 +10,7 @@
 # This Yaml code can be added to dwains Dashboard or just a page in Home Assistant / lovelace. \
 # There are a few custom card requirements (like compass) and I utilize custom styles. 
 # 
-# Grapekh - 2023-07-04 - Copied idea from Chris 
+# Grapekh - 2023-07-04 - Original Idea idea from @MostlyChris (Youtube: https://www.youtube.com/watch?v=SEyrcLq8pRo)
 # Grapekh - 2023-07-05 - Updated to include my Ambient Weather sensors and custom configuration
 #
 
